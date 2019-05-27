@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.antoninkriz.eu/who-am-i</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.antoninkriz.eu/about-me</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.antoninkriz.eu/projects</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.antoninkriz.eu/project/PedF-CUNI---User-friendly-Recognition-of-Completion-of-Courses</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.antoninkriz.eu/project/Kici---Unofficial-app-for-skolakrizikcz</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.antoninkriz.eu/project/Kici---Unofficial-app-for-vosaspsekrizikcz</loc>
+        <priority>0.8</priority>
+    </url>
+</urlset>

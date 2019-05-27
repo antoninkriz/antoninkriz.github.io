@@ -44,6 +44,8 @@
     font-weight: 300;
     text-decoration: none;
     transition: text-shadow .2s ease;
+    margin: 0;
+    cursor: pointer;
 
     &:hover {
       text-shadow: 0 0 1px $color-blue;

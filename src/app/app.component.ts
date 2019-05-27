@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {trigger, animate, style, query, transition} from '@angular/animations';
 
 
@@ -29,5 +29,17 @@ import {trigger, animate, style, query, transition} from '@angular/animations';
   ]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
+  private static readonly mobileMaxWidth: number = 991;
+
+  public showFullTitle: boolean;
+
+  ngOnInit() {
+    this.onResize();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.showFullTitle = window.innerWidth > AppComponent.mobileMaxWidth;
+  }
 }
