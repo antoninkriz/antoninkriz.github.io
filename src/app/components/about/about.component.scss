@@ -1,0 +1,33 @@
+@import "../../../imports";
+
+.timeblock {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.timeline {
+  margin: $margin 0;
+
+  @media #{$media-medium}{
+    margin: $margin;
+  }
+
+  app-home-line {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: opacity .2s ease;
+    opacity: 1;
+  }
+
+  &:hover {
+    app-home-line {
+      opacity: .8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

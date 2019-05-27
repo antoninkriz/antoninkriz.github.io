@@ -1,0 +1,44 @@
+@import "../../../../imports.scss";
+
+.event {
+  position: relative;
+
+  @media #{$media-medium} {
+    margin: 30px;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px $color-light;
+    transition: box-shadow .2s ease;
+
+    &:hover {
+      box-shadow: 0 0 5px $color-light;
+    }
+  }
+
+  @media #{$media-medium} {
+    margin: 40px;
+    padding: 25px;
+  }
+
+  @at-root #{&}__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    img {
+      height: 50px;
+      margin-right: 10px;
+
+      @media #{$media-medium} {
+        height: 75px;
+        margin-right: 20px;
+      }
+
+      @media #{$media-medium} {
+        height: 100px;
+        margin-right: 25px;
+      }
+    }
+  }
+}

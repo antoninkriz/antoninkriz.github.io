@@ -1,0 +1,44 @@
+{
+  "listEducation": [
+    {
+      "from": "2015",
+      "to": "2019",
+      "image": "skolakrizik.png",
+      "title": "SPŠE Františka Křižíka",
+      "text": "## High School - IT and Electrical Engineering\n\nGraduated\n\n[skolakrizik.cz](https://www.skolakrizik.cz)"
+    },
+    {
+      "from": "2011",
+      "to": "2015",
+      "image": "arcig.png",
+      "title": "Arcibiskupské gymnásium",
+      "text": "## Gymnasium\n\n[arcig.cz](https://www.arcig.cz)"
+    }
+  ],
+  "listJobs": [
+    {
+      "from": "2017-08",
+      "to": "now",
+      "image": "alza.png",
+      "title": "Alza.cz - Front-End Web developer",
+      "stack": ["ASP.Net", ".Net Core", "C#", "SQL", "T-SQL", "HTML5", "AngularJS","TypeScrip", "JavaScript", "jQuery"],
+      "text": "## Tech-stack\n- C#, ASP.Net\n- T-SQL (MSSQL)\n- HTML5\n- SCSS, LESS, CSS\n- AngularJS, TypeScript, JavaScript, jQuery\n\n## Few words\nAfter my intership at Alza.cz I've been accepted for a part-time position as a .Net web developer. I've been working on general improvements, fixing bugs and ond other tasks."
+    },
+    {
+      "from": "2018-05",
+      "to": "2019-02",
+      "image": "designcrew.png",
+      "title": "Designcrew.cz - Web developer",
+      "stack": ["Apache", "Nginx", "IIS", "PHP 7", "Nette", "WordPress", "MySQL", "TypeScript", "CoffeeScript", "JavaScript", "SCSS", "LESS", "CSS"],
+      "text": "## Tech-stack\n- Apache, Nginx, IIS\n- PHP 7, Nette\n- WordPress\n- HTML5\n- SCSS, LESS, CSS\n- TypeScript, CoffeeScript, JavaScript, jQuery\n\n## Few words\nI've been managing, building, optimizing, editing, debugging and fixing websites using high variety of technologies - from completely custom sites and sites based around Nette framework and similar to WordPress."
+    },
+    {
+      "from": "2017-05",
+      "to": "2017-06",
+      "image": "alza.png",
+      "title": "Alza.cz - Internship",
+      "stack": ["ASP.Net", ".Net Core", "C#", "SQL", "T-SQL", "HTML5", "JavaScript", "jQuery"],
+      "text": "## Tech-stack\n- C#, ASP.Net\n- T-SQL (MSSQL)\n- HTML5\n- LESS, CSS\n- JavaScript, jQuery\n\n## Few words\nDuring my intership at Alza I got into the Web Development team and stayed since."
+    }
+  ]
+}

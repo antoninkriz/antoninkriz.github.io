@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,600|Source+Sans+Pro:200,300,400,600');
+@import '../node_modules/normalize.css/normalize.css';
+@import '/imports.scss';
+
+/* PAGE DEFAULTS */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Source Sans Pro', monospace;
+  font-weight: 300;
+  font-size: 14px;
+  color: $color-black;
+  background: $color-white;
+  line-height: 1.5em;
+  overflow-y: scroll;
+
+  @media #{$media-medium} {
+    font-size: 1.15em;
+  }
+
+  @media #{$media-big} {
+    font-size: 1.4em;
+  }
+}
+
+html, body {
+  width: 100%;
+}
+
+pre {
+  font-family: 'Source Code Pro', monospace;
+}
+
+::-moz-selection {
+  background: $color-blue !important;
+  color: $color-white !important;
+  text-shadow: 0 0 2px $color-white !important;
+}
+
+::selection {
+  background: $color-blue !important;
+  color: $color-white !important;
+  text-shadow: 0 0 2px $color-white !important;
+}
+
+main > * {
+  display: block;
+  position: absolute;
+  left: 30px;
+  width: calc(100% - 60px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.45rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+
+.markdown {
+  @include markdown-content();
+}
+
+/* LOADING SCREEN */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: $color-black;
+  color: $color-white;
+  opacity: 1;
+  z-index: $loading-z;
+
+  @at-root #{&}__svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  @at-root #{&}__wrapper {
+    @at-root #{&}__loader {
+      @keyframes loading-animation--spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 100px;
+      height: 100px;
+      margin: -50px 0 0 -50px;
+      border: 4px solid $color-dark;
+      border-top: 4px solid $color-white;
+      border-radius: 50%;
+      -webkit-animation: loading-animation--spinner .75s linear infinite;
+      animation: loading-animation--spinner .75s linear infinite;
+    }
+  }
+}
+
+app-root:not(:empty) {
+  & + .loading {
+    @keyframes loading-animation--block {
+      50% {
+        height: 100vh;
+      }
+      80% {
+        height: $title-height;
+        opacity: 1;
+      }
+      100% {
+        height: $title-height;
+        opacity: 0;
+        z-index: calc(#{$title-z} - 1);
+        display: none;
+      }
+    }
+
+    animation: loading-animation--block;
+    animation-duration: $loading-animation;
+    animation-fill-mode: forwards;
+
+    .loading__wrapper {
+      @keyframes loading-animation--wrapper {
+        0%, 40% {
+          opacity: 1;
+        }
+        50%, 100% {
+          opacity: 0;
+          display: none;
+        }
+      }
+
+      animation: loading-animation--wrapper;
+      animation-duration: $loading-animation;
+      animation-fill-mode: forwards;
+    }
+  }
+}

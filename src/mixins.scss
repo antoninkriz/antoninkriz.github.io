@@ -1,0 +1,174 @@
+@import "colors";
+
+@mixin linedShadow($moveX: true) {
+  &::before {
+    mask-image: url("/assets/images/svg/boxbg.svg");
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 12px;
+    @if ($moveX) {
+      left: 12px;
+    }
+    z-index: -1;
+    mask-size: 12px 12px;
+    background: $color-blue;
+    transition: all .1s ease;
+    opacity: 1;
+    border-radius: 3px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 6px;
+    @if ($moveX) {
+      left: 6px;
+    }
+    z-index: -1;
+    background-size: 12px 12px;
+    background: rgba(0, 0, 0, .5);
+    opacity: 1;
+    border-radius: 3px;
+  }
+}
+
+@mixin linkUnderline {
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+  padding-bottom: 10px;
+
+  &:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity : 0;
+    z-index: -1;
+    background: url('/assets/images/svg/linkbg.svg') repeat-x 0 100%;
+    background-size: auto 14px;
+    transition: opacity .1s ease;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin markdown-content {
+  h1 {
+    color: yellow;
+    background: red;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin: 20px 0 10px;
+  }
+
+  h3 {
+    font-size: 1.45rem;
+    margin: 10px 0 5px;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  a {
+    color: $color-blue;
+    @include linkUnderline();
+
+    & * {
+      color: $color-blue;
+    }
+  }
+
+  code {
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+  }
+
+  pre {
+    position: relative;
+    margin: 20px 12px 30px auto !important;
+    overflow: visible !important;
+
+    @include linedShadow();
+  }
+
+  blockquote {
+    text-align: right;
+    background: lightgray;
+    padding: 15px;
+    border-left: solid 5px $color-gray;
+    margin-inline-start: 80px;
+  }
+
+  .img {
+    padding: 0 12px 12px 0;
+    text-align: center;
+    border-radius: 3px;
+
+    & > a:hover:after {
+      opacity: 0;
+    }
+
+    @at-root #{&}__content {
+      display: inline-block;
+      text-align: left;
+    }
+
+    @at-root #{&}__wrapper {
+      background: rgba(0, 0, 0, 0.7);
+      position: relative;
+      border-radius: 3px;
+
+      img {
+        max-width: 100%;
+        max-height: 512px;
+        margin: auto;
+        display: block;
+        border-radius: 3px;
+
+        &[alt="logo"] {
+          width: 128px;
+        }
+      }
+
+      @include linedShadow();
+    }
+
+    @at-root #{&}__caption {
+      display: inline-block;
+      background: $color-dark;
+      margin-left: 35px;
+      padding: 5px 15px;
+      text-align: left;
+
+      @at-root #{&}__text {
+        display: block;
+        color: $color-light;
+
+        &:first-of-type {
+          font-weight: 600;
+        }
+
+        &:nth-of-type(2) {
+          font-size: .875rem;
+        }
+      }
+    }
+  }
+}

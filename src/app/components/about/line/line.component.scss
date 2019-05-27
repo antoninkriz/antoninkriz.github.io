@@ -1,0 +1,43 @@
+@import "../../../../imports.scss";
+
+.timeline__wrapper {
+  padding: 5px 0;
+}
+
+.timeline__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 0 5px;
+  white-space: nowrap;
+  
+  @media #{$media-medium} {
+    position: initial;
+    padding: 0;
+  }
+}
+
+.timeline__text {
+  color: $color-gray;
+  font-size: .8rem;
+
+  &:nth-of-type(2) {
+    color: $color-blue;
+    margin: 0 5px;
+  }
+}
+
+.timeline__line {
+  padding: 5px;
+  border-radius: 4px;
+  height: 5px;
+  background: $color-dark;
+  margin-top: 24px;
+  
+  @media #{$media-medium} {
+    margin-top: 0;
+  }
+}

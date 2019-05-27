@@ -1,0 +1,12 @@
+<article class="event">
+  <div class="event__title">
+    <img *ngIf="image" src="/assets/images/logo/{{image}}" alt="logo">
+    <h2>{{title}}</h2>
+  </div>
+  <div class="event__stack" *ngIf="stack?.length > 0">
+    <span *ngFor="let s of stack">s{{(s != stack[stack.length - 1]) ? ',' : ''}} </span>
+  </div>
+  <div class="event__content markdown">
+    <markdown [data]="text"></markdown>
+  </div>
+</article>

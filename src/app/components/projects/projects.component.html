@@ -1,0 +1,14 @@
+<div class="projects">
+  <h2>Projects</h2>
+  <section class="projects__list">
+    <article class="project markdown"
+             *ngFor="let e of projects"
+             [routerLink]="'/project/' + this.utils.getId(e.title)">
+      <img [src]="'/assets/images/content/' + e.folder + '/logo.png'" [alt]="'Logo of ' + e.title">
+      <div class="text">
+        <h3>{{e.title}}</h3>
+        <markdown [data]="e.description"></markdown>
+      </div>
+    </article>
+  </section>
+</div>

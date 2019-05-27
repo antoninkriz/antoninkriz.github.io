@@ -1,0 +1,106 @@
+@import '../imports.scss';
+
+.nav {
+  position: fixed;
+  width: 100%;
+  height: $title-height;
+  background: $color-white;
+  padding: 0 25px;
+  top: 0;
+  box-shadow: 0 0 5px $color-light;
+  z-index: 100;
+
+  @at-root #{&}__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    animation: loading-animation--nav__title;
+    animation-duration: $loading-animation;
+    animation-fill-mode: forwards;
+
+    @keyframes loading-animation--nav__title {
+      0%, 80% {
+        transform: translateY(-#{$title-height});
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @media #{$media-medium} {
+      width: $size-medium;
+    }
+
+    @media #{$media-big} {
+      width: $size-big;
+    }
+  }
+
+  @at-root #{&}__title {
+    line-height: $title-height;
+    font-size: $title-size;
+    color: $color-blue;
+    font-weight: 300;
+    text-decoration: none;
+    transition: text-shadow .2s ease;
+
+    &:hover {
+      text-shadow: 0 0 1px $color-blue;
+    }
+
+    &.nav__title--desktop {
+      display: none;
+    }
+
+    @media #{$media-medium} {
+      &.nav__title--desktop {
+        display: block;
+      }
+
+      &.nav__title--mobile {
+        display: none;
+      }
+    }
+  }
+
+  @at-root #{&}__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @at-root #{&}__link {
+    display: block;
+    height: $title-height;
+    line-height: $title-height;
+    width: calc(#{$title-height} - 20px);
+    padding: 0 15px;
+    color: $color-dark;
+    text-align: center;
+    text-decoration: none;
+    transition: color .2s ease, text-shadow .2s ease;
+
+    &:hover {
+      color: $color-blue;
+      text-shadow: 0 0 .5px $color-blue;
+    }
+
+    @media #{$media-medium} {
+      width: $title-height;
+    }
+  }
+}
+
+main {
+  max-width: $size-medium;
+  width: 100%;
+  padding: $margin;
+  margin: $title-height auto;
+  min-height: calc(100vh - #{2 * $title-height});
+  position: relative;
+
+  @media #{$media-big} {
+    max-width: $size-big;
+  }
+}

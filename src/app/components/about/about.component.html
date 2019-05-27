@@ -1,0 +1,45 @@
+<div class="about">
+  <section class="timeblock">
+    <h1>Work experience</h1>
+    <div class="timeline timeline-jobs">
+      <app-home-line *ngFor="let e of listJobs"
+                     (click)="utils.scrollTo('job-' + e.title)"
+                     [title]="e.title"
+                     [now]="e.now"
+                     [dateFrom]="e.from"
+                     [dateTo]="e.to"
+                     [start]="e.position.start"
+                     [width]="e.position.width"></app-home-line>
+    </div>
+    <section class="articles articles-jobs">
+      <app-home-event *ngFor="let e of listJobs"
+                      [id]="utils.getId('job-' + e.title)"
+                      [image]="e.image"
+                      [title]="e.title"
+                      [text]="e.text"
+                      [dateFrom]="e.from"
+                      [dateTo]="e.to"></app-home-event>
+    </section>
+  </section>
+  <section class="timeblock">
+    <h1>Education</h1>
+    <div class="timeline timeline-education">
+      <app-home-line *ngFor="let e of listEducation"
+                     (click)="utils.scrollTo('education-' + e.title)"
+                     [title]="e.title"
+                     [dateFrom]="e.from"
+                     [dateTo]="e.to"
+                     [start]="e.position.start"
+                     [width]="e.position.width"></app-home-line>
+    </div>
+    <section class="articles articles-education">
+      <app-home-event *ngFor="let e of listEducation"
+                      [id]="utils.getId('education-' + e.title)"
+                      [image]="e.image"
+                      [title]="e.title"
+                      [text]="e.text"
+                      [dateFrom]="e.from"
+                      [dateTo]="e.to"></app-home-event>
+    </section>
+  </section>
+</div>
