@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {trigger, animate, style, query, transition} from '@angular/animations';
+import {Angulartics2GoogleGlobalSiteTag} from 'angulartics2/gst';
 
 
 @Component({
@@ -28,7 +29,6 @@ import {trigger, animate, style, query, transition} from '@angular/animations';
     ])
   ]
 })
-
 export class AppComponent implements OnInit {
   private static readonly mobileMaxWidth: number = 991;
 
@@ -41,5 +41,9 @@ export class AppComponent implements OnInit {
   @HostListener('window:resize')
   onResize() {
     this.showFullTitle = window.innerWidth > AppComponent.mobileMaxWidth;
+  }
+
+  constructor(private angulartics: Angulartics2GoogleGlobalSiteTag) {
+      angulartics.startTracking();
   }
 }

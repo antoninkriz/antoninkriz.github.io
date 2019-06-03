@@ -7,6 +7,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
 import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import {MarkdownModule, MarkdownService, MarkedOptions} from 'ngx-markdown';
+import {Angulartics2Module} from 'angulartics2';
 
 import {routing} from './app.routing';
 import {AppComponent} from './app.component';
@@ -34,6 +35,7 @@ import {ProjectComponent} from './components/project/project.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ClipboardModule,
+    Angulartics2Module.forRoot(),
     ScrollToModule.forRoot(),
     MarkdownModule.forRoot({
       loader: HttpClient,

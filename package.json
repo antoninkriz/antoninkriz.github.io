@@ -20,15 +20,16 @@
     "@angular/platform-browser-dynamic": "^7.2.14",
     "@angular/router": "^7.2.14",
     "@nicky-lenaers/ngx-scroll-to": "^2.0.0",
+    "angulartics2": "^7.5.2",
     "core-js": "^2.5.4",
     "marked": "^0.6.2",
+    "ngx-clipboard": "^12.1.0",
     "ngx-markdown": "^7.1.5",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.16.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "ngx-clipboard": "latest"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
