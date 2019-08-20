@@ -13,4 +13,5 @@ export class LineComponent {
   @Input() width: number;
   @Input() dateFrom: Date;
   @Input() dateTo: Date;
+  @Input() showMonths: boolean;
 }

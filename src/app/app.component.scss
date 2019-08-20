@@ -97,10 +97,14 @@
 main {
   max-width: $size-medium;
   width: 100%;
-  padding: $margin;
+  padding: $margin-mobile;
   margin: $title-height auto;
   min-height: calc(100vh - #{2 * $title-height});
   position: relative;
+
+  @media #{$media-medium} {
+    padding: $margin;
+  }
 
   @media #{$media-big} {
     max-width: $size-big;

@@ -1,9 +1,9 @@
 <div class="timeline__wrapper"
      [ngStyle]="{width: width + '%', 'margin-left': start + '%'}">
   <div class="timeline__info">
-    <span class="timeline__text">{{(dateFrom.getMonth() + 1)}}-{{dateFrom.getFullYear()}}</span>
+    <span class="timeline__text">{{showMonths ? (dateFrom.getMonth() + 1) + '-' : ''}}{{dateFrom.getFullYear()}}</span>
     <span class="timeline__text">{{title}}</span>
-    <span class="timeline__text">{{now ? "today" : (dateTo.getMonth() + 1) + '-' + dateTo.getFullYear()}}</span>
+    <span class="timeline__text">{{now ? "today" : (showMonths ? (dateFrom.getMonth() + 1) + '-' : '') + dateTo.getFullYear()}}</span>
   </div>
   <div class="timeline__line"></div>
 </div>
