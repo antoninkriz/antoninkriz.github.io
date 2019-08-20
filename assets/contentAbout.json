@@ -1,11 +1,18 @@
 {
   "listEducation": [
     {
+      "from": "2019",
+      "to": "2022",
+      "image": "cvut.png",
+      "title": "FIT CUT - Bc.",
+      "text": "## Faculty of Information Technology of CUT in Prague\n\n[fit.cvut.cz](https://fit.cvut.cz/en)"
+    },
+    {
       "from": "2015",
       "to": "2019",
       "image": "skolakrizik.png",
       "title": "SPŠE Františka Křižíka",
-      "text": "## High School - IT and Electrical Engineering\n\nGraduated\n\n[skolakrizik.cz](https://www.skolakrizik.cz)"
+      "text": "## High School - IT and Electrical Engineering\n\n[skolakrizik.cz](https://www.skolakrizik.cz)"
     },
     {
       "from": "2011",
@@ -21,7 +28,7 @@
       "to": "now",
       "image": "alza.png",
       "title": "Alza.cz - Front-End Web developer",
-      "stack": ["ASP.Net", ".Net Core", "C#", "SQL", "T-SQL", "HTML5", "AngularJS","TypeScrip", "JavaScript", "jQuery"],
+      "stack": ["ASP.Net", ".Net Core", "C#", "SQL", "T-SQL", "HTML5", "AngularJS", "TypeScrip", "JavaScript", "jQuery", "SCSS", "LESS", "CSS"],
       "text": "## Tech-stack\n- C#, ASP.Net\n- T-SQL (MSSQL)\n- HTML5\n- SCSS, LESS, CSS\n- AngularJS, TypeScript, JavaScript, jQuery\n\n## Few words\nAfter my intership at Alza.cz I've been accepted for a part-time position as a .Net web developer. I've been working on general improvements, fixing bugs and ond other tasks."
     },
     {
