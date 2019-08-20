@@ -44,7 +44,6 @@ import {ProjectComponent} from './components/project/project.component';
         useValue: {
           gfm: true,
           tables: true,
-          sanitize: true,
           smartLists: true,
           smartypants: true,
         },
