@@ -10,6 +10,7 @@ import {UtilsService} from '../../services/utils.service';
 })
 export class AboutComponent {
   public listJobs: Event[] = [];
+  public listAccomplishments: Event[] = [];
   public listEducation: Event[] = [];
 
   private prepareEvents(ev: Event[]): Event[] {
@@ -64,6 +65,15 @@ export class AboutComponent {
 
             this.listJobs = this.prepareEvents(ev);
           }
+
+          if (r.listAccomplishments && r.listAccomplishments.length > 0) {
+            const ev: Event[] = [];
+
+            let i = 0;
+            r.listAccomplishments.forEach(e => ev.push(new Event(i++, e.from, e.to, e.image, e.title, e.stack, e.text)));
+
+            this.listAccomplishments = this.prepareEvents(ev);
+          }
         }
       });
   }
@@ -71,6 +81,7 @@ export class AboutComponent {
 
 class ContentAbout {
   readonly listEducation: EventJson[];
+  readonly listAccomplishments: EventJson[];
   readonly listJobs: EventJson[];
 }
 
